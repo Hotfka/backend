@@ -1,12 +1,14 @@
 package com.example.openchatserver.controller;
 
 
+import com.example.openchatserver.service.MessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
@@ -17,7 +19,7 @@ public class MessageController {
     @PostMapping("/api/v1/sendMessage")
     public ResponseEntity<SendMessageResponse> sendMessage(@RequestBody sendMessageRequest request){
 
-        SendMessageResponse savedMessage =  messageService.sendMessage();
+        SendMessageResponse savedMessage =  messageService.sendMessage(request);
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(savedMessage);
