@@ -1,10 +1,8 @@
 package com.example.openchatserver.entity;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.example.openchatserver.enums.ReactionType;
+import jakarta.persistence.*;
 import lombok.Generated;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +10,8 @@ import lombok.Setter;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.sql.Blob;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter
@@ -29,10 +29,8 @@ public class Message extends BaseDateEntity {
 
     private String sender;
 
-
-
-
-
+    @OneToMany(mappedBy = "message")
+    private List<Reaction> reactions = new ArrayList<>();
 
 
 

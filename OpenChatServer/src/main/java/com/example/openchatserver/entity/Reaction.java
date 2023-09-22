@@ -1,15 +1,15 @@
 package com.example.openchatserver.entity;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.example.openchatserver.enums.ReactionType;
+import jakarta.persistence.*;
 import lombok.Getter;
+
+import static jakarta.persistence.FetchType.LAZY;
 
 @Entity
 @Getter
-public class Reaction extends BaseDateEntity{
+public class Reaction extends BaseDateEntity {
 
     @Id
     @GeneratedValue
@@ -18,10 +18,11 @@ public class Reaction extends BaseDateEntity{
 
     private String userName;
 
+    private ReactionType reactionType;
 
-
-
-
+    @ManyToOne
+    @JoinColumn(name="message_id")
+    private Message message;
 
 
 }
