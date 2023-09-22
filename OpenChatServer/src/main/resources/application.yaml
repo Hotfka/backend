@@ -1,7 +1,6 @@
 spring:
-
   datasource:
-    url: jdbc:h2:./hotfka
+    url: jdbc:h2:./Documents/h2/bin/hotfka
     driver-class-name: org.h2.Driver
     username: sa
     password: 1234
@@ -13,6 +12,8 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+        hbm2ddl:
+          auto: create
 
   h2:
     console:
