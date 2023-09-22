@@ -1,6 +1,7 @@
 package com.example.openchatserver.controller;
 
 
+import com.example.openchatserver.dto.SendMessageResponse;
 import com.example.openchatserver.service.MessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

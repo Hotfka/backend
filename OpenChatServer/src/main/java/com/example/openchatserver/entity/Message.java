@@ -32,6 +32,11 @@ public class Message extends BaseDateEntity {
     @OneToMany(mappedBy = "message")
     private List<Reaction> reactions = new ArrayList<>();
 
-
-
+    public Message() {
+        this.id = id;
+        this.userName = userName;
+        this.text = text;
+        this.sender = sender;
+        this.reactions = reactions;
+    }
 }

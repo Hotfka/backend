@@ -1,6 +1,7 @@
 package com.example.openchatserver.service;
 
 
+import com.example.openchatserver.dto.SendMessageResponse;
 import com.example.openchatserver.entity.Message;
 import com.example.openchatserver.repository.MessageRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +19,11 @@ public class MessageService {
     public SendMessageResponse sendMessage(sendMessageRequest request){
 
         Message message = new Message(request);
-
         messageRepository.save(message);
+
+        SendMessageResponse sendMessageResponse = new SendMessageResponse(message);
+
+        return sendMessageResponse;
 
     }
 
