@@ -17,8 +17,10 @@ public class MessageController {
     @PostMapping("/api/v1/sendMessage")
     public ResponseEntity<SendMessageResponse> sendMessage(@RequestBody sendMessageRequest request){
 
+        SendMessageResponse savedMessage =  messageService.sendMessage();
+
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(savedCandy);
+                .body(savedMessage);
     }
 
 
