@@ -1,0 +1,5 @@
+rootProject.name = 'hotfka'
+include 'untitled'
+include 'OpenChatServer'
+include 'PublishServer'
+
