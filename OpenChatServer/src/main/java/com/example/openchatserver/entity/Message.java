@@ -1,6 +1,7 @@
 package com.example.openchatserver.entity;
 
 
+import com.example.openchatserver.dto.SendMessageRequest;
 import com.example.openchatserver.enums.ReactionType;
 import jakarta.persistence.*;
 import lombok.Generated;
@@ -32,11 +33,10 @@ public class Message extends BaseDateEntity {
     @OneToMany(mappedBy = "message")
     private List<Reaction> reactions = new ArrayList<>();
 
-    public Message() {
-        this.id = id;
-        this.userName = userName;
-        this.text = text;
-        this.sender = sender;
-        this.reactions = reactions;
+    public Message(SendMessageRequest request) {
+        this.id = request.getMessageId();
+        this.userName = request.getUserName();
+        this.text = request.getText();
+        this.sender = request.getSender();
     }
 }

@@ -1,6 +1,7 @@
 package com.example.openchatserver.controller;
 
 
+import com.example.openchatserver.dto.SendMessageRequest;
 import com.example.openchatserver.dto.SendMessageResponse;
 import com.example.openchatserver.service.MessageService;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ public class MessageController {
     private final MessageService messageService;
 
     @PostMapping("/api/v1/sendMessage")
-    public ResponseEntity<SendMessageResponse> sendMessage(@RequestBody sendMessageRequest request){
+    public ResponseEntity<SendMessageResponse> sendMessage(@RequestBody SendMessageRequest request){
 
         SendMessageResponse savedMessage =  messageService.sendMessage(request);
 

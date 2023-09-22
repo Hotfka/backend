@@ -1,6 +1,7 @@
 package com.example.openchatserver.service;
 
 
+import com.example.openchatserver.dto.SendMessageRequest;
 import com.example.openchatserver.dto.SendMessageResponse;
 import com.example.openchatserver.entity.Message;
 import com.example.openchatserver.repository.MessageRepository;
@@ -16,7 +17,7 @@ public class MessageService {
     private MessageRepository messageRepository;
 
     @Transactional
-    public SendMessageResponse sendMessage(sendMessageRequest request){
+    public SendMessageResponse sendMessage(SendMessageRequest request){
 
         Message message = new Message(request);
         messageRepository.save(message);
