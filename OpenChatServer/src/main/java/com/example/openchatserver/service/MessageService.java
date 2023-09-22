@@ -1,6 +1,7 @@
 package com.example.openchatserver.service;
 
 
+import com.example.openchatserver.repository.MessageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class MessageService {
 
     private MessageRepository messageRepository;
+
+
+
+
 
 
 
