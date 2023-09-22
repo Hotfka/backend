@@ -5,8 +5,6 @@ import lombok.Getter;
 @Getter
 public class SendMessageRequest {
 
-    private Long messageId;
-
     private String userName;
 
     private String text;

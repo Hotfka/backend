@@ -34,7 +34,6 @@ public class Message extends BaseDateEntity {
     private List<Reaction> reactions = new ArrayList<>();
 
     public Message(SendMessageRequest request) {
-        this.id = request.getMessageId();
         this.userName = request.getUserName();
         this.text = request.getText();
         this.sender = request.getSender();

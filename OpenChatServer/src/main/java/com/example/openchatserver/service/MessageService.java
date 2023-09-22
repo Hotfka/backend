@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class MessageService {
 
-    private MessageRepository messageRepository;
+    private final MessageRepository messageRepository;
 
     @Transactional
     public SendMessageResponse sendMessage(SendMessageRequest request){
