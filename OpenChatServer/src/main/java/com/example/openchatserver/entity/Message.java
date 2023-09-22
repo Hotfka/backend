@@ -23,9 +23,15 @@ public class Message extends BaseDateEntity {
     @Column(name="message_id")
     private Long id;
 
+    private String userName;
+
     private String text;
 
     private String sender;
+
+
+
+
 
 
 
