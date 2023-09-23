@@ -1,5 +1,6 @@
 package com.example.publishserver.service;
 
+import com.example.publishserver.repository.EmitterRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
