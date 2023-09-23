@@ -24,6 +24,8 @@ public class SSEService {
     public SseEmitter subscribe(String userName) {
         SseEmitter emitter = createEmitter(userName);
 
+        System.out.println("EventStream Created. [userName="+userName+"]");
+
         sendToClient(userName, "EventStream Created. [userId=" + userName + "]");
         return emitter;
     }

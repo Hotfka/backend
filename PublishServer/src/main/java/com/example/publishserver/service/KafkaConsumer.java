@@ -15,8 +15,7 @@ public class KafkaConsumer {
     @KafkaListener(topics = "sendMessage", groupId = "hotfka")
     public void consume(String messageUserName) throws IOException {
         System.out.println(String.format("Consumed message getUserName: %s", messageUserName));
-
-
+        sseController.sendData(messageUserName);
 
     }
 
