@@ -25,7 +25,6 @@ public class MessageService {
         messageRepository.save(message);
         kafkaProducer.sendMessageEvent(message);
         SendMessageResponse sendMessageResponse = new SendMessageResponse(message);
-
         return sendMessageResponse;
 
     }
