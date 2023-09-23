@@ -13,12 +13,12 @@ public class SSEController {
     private final SSEService sseService;
 
     @GetMapping(value = "/subscribe/{id}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public SseEmitter subscribe(@PathVariable Long id) {
-        return sseService.subscribe(id);
+    public SseEmitter subscribe(@PathVariable String userName) {
+        return sseService.subscribe(userName);
     }
 
     @PostMapping("/send-data/{id}")
-    public void sendData(@PathVariable Long id) {
-        sseService.notify(id, "data");
+    public void sendData(@PathVariable String userName) {
+        sseService.notify(userName, "data");
     }
 }
