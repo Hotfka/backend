@@ -1,6 +1,7 @@
 package com.example.openchatserver.controller;
 
 
+import com.example.openchatserver.dto.GetMessagesResponse;
 import com.example.openchatserver.dto.SendMessageRequest;
 import com.example.openchatserver.dto.SendMessageResponse;
 import com.example.openchatserver.service.MessageService;
@@ -30,9 +31,9 @@ public class MessageController {
 
 
     @GetMapping("/api/v1/getMessages")
-    public ResponseEntity<SendMessageResponse> getMessages(){
+    public ResponseEntity<GetMessagesResponse> getMessages(){
 
-        GetMessageResponse messages = messageService.getMessages();
+        GetMessagesResponse messages = messageService.getMessages();
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(messages);
