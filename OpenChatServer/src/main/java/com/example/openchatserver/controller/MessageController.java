@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 public class MessageController {
@@ -31,12 +33,12 @@ public class MessageController {
 
 
     @GetMapping("/api/v1/getMessages")
-    public ResponseEntity<GetMessagesResponse> getMessages(){
+    public ResponseEntity<List<GetMessagesResponse>> getMessages(){
 
-        GetMessagesResponse messages = messageService.getMessages();
+        List<GetMessagesResponse> messagesResponse = messageService.getMessages();
 
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(messages);
+                .body(messagesResponse);
     }
 
 
