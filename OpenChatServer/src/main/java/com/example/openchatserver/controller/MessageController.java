@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,6 +26,16 @@ public class MessageController {
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(savedMessage);
+    }
+
+
+    @GetMapping("/api/v1/getMessages")
+    public ResponseEntity<SendMessageResponse> getMessages(){
+
+        GetMessageResponse messages = messageService.getMessages();
+
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(messages);
     }
 
 
