@@ -11,7 +11,7 @@ public class KafkaProducer {
     private static final String TOPIC = "sendMessage";
     private final KafkaTemplate<String, String> kafkaTemplate;
     public void sendMessageEvent(Message message) {
-        System.out.println(String.format("Produce message getUserName : %s", message.getUserName());
+        System.out.println(String.format("Produce message getUserName : %s", message.getUserName()));
         this.kafkaTemplate.send(TOPIC, message.getUserName());
     }
 

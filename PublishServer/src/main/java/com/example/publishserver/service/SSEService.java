@@ -55,6 +55,7 @@ public class SSEService {
             } catch (IOException exception) {
                 emitterRepository.deleteById(userName);
                 emitter.completeWithError(exception);
+
             }
         }
     }
