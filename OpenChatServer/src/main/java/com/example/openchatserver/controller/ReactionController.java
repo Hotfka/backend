@@ -15,7 +15,7 @@ public class ReactionController {
 
     private final ReactionService reactionService;
 
-    @PutMapping("/api/v1/updateReaction")
+    @PostMapping("/api/v1/sendReaction")
     public ResponseEntity<SendReactionResponse> updateReaction(@RequestParam(name="reaction")String reaction){
 
         SendReactionResponse sendReactionResponse = reactionService.sendReaction(reaction);
