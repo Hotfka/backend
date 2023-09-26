@@ -1,6 +1,7 @@
 package com.example.openchatserver.service;
 
 
+import com.example.openchatserver.dto.SendReactionRequest;
 import com.example.openchatserver.dto.SendReactionResponse;
 import com.example.openchatserver.repository.ReactionRepository;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +16,10 @@ public class ReactionService {
     private final ReactionRepository reactionRepository;
 
     @Transactional
-    public SendReactionResponse sendReaction(String reaction){
+    public SendReactionResponse sendReaction(SendReactionRequest request){
+
+
+
 
 
         return SendReactionResponse;
