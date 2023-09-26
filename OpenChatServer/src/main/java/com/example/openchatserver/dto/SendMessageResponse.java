@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +24,9 @@ public class SendMessageResponse {
 
     private String sender;
 
+
+
+
     private List<Reaction> reactions = new ArrayList<>();
 
     public SendMessageResponse(Message message) {
@@ -31,5 +35,8 @@ public class SendMessageResponse {
         this.text = message.getText();
         this.sender = message.getSender();
         this.reactions = message.getReactions();
+
+
+
     }
 }

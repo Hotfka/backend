@@ -2,16 +2,11 @@ package com.example.openchatserver.entity;
 
 
 import com.example.openchatserver.dto.SendMessageRequest;
-import com.example.openchatserver.enums.ReactionType;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.Generated;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
 
