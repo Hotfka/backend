@@ -3,6 +3,7 @@ package com.example.openchatserver.entity;
 
 import com.example.openchatserver.dto.SendMessageRequest;
 import com.example.openchatserver.enums.ReactionType;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Generated;
 import lombok.Getter;
@@ -30,7 +31,8 @@ public class Message extends BaseDateEntity {
 
     private String sender;
 
-    @OneToMany(mappedBy = "message")
+    @OneToMany(mappedBy = "message",fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Reaction> reactions = new ArrayList<>();
 
     public Message(SendMessageRequest request) {

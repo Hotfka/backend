@@ -27,10 +27,14 @@ public class ReactionService {
 
         Message message =  messageRepository.findById(request.getMessageId()).orElseThrow(IllegalArgumentException::new);
         Reaction reaction = new Reaction(request);
-        List<Reaction>reactions =  message.getReactions();
-        reactions.add(reaction);
+
+        reaction.setMessage(message);
+        message.getReactions().add(reaction);
+
+        reactionRepository.save(reaction);
         messageRepository.save(message);
-        SendReactionResponse sendReactionResponse = new SendReactionResponse(request);
+
+        SendReactionResponse sendReactionResponse = new SendReactionResponse(request,reaction.getId());
         return sendReactionResponse;
     }
 

@@ -11,13 +11,14 @@ import lombok.Getter;
 public class SendReactionResponse {
 
 
+    private Long reactionId;
     private Long messageId;
 
     private String userName;
-
     private ReactionType reactionType;
 
-    public SendReactionResponse(SendReactionRequest request) {
+    public SendReactionResponse(SendReactionRequest request,Long reactionId) {
+        this.reactionId = reactionId;
         this.messageId = request.getMessageId();
         this.userName = request.getUserName();
         this.reactionType = request.getReactionType();
