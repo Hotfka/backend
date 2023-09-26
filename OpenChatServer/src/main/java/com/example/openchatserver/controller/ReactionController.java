@@ -21,7 +21,6 @@ public class ReactionController {
 
         SendReactionResponse sendReactionResponse = reactionService.sendReaction(request);
 
-
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(sendReactionResponse);
     }

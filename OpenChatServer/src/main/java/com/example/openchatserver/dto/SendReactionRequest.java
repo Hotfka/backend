@@ -10,8 +10,9 @@ import lombok.Getter;
 @Getter
 public class SendReactionRequest {
 
-    private String userName;
 
+    private Long messageId;
+    private String userName;
     private ReactionType reactionType;
 
 

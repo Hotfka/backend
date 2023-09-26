@@ -38,4 +38,8 @@ public class Message extends BaseDateEntity {
         this.text = request.getText();
         this.sender = request.getSender();
     }
+
+    public void setReactions(List<Reaction> reactions) {
+        this.reactions = reactions;
+    }
 }
