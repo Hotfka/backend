@@ -22,6 +22,9 @@ public class ReactionService {
     private final ReactionRepository reactionRepository;
     private final MessageRepository messageRepository;
 
+    private final KafkaProducer kafkaProducer;
+
+
     @Transactional
     public SendReactionResponse sendReaction(SendReactionRequest request){
 
@@ -33,6 +36,10 @@ public class ReactionService {
 
         reactionRepository.save(reaction);
         messageRepository.save(message);
+
+
+        kafkaProducer.sendMessageEvent(message);
+
 
         SendReactionResponse sendReactionResponse = new SendReactionResponse(request,reaction.getId());
         return sendReactionResponse;

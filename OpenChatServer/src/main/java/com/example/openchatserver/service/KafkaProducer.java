@@ -15,4 +15,6 @@ public class KafkaProducer {
         this.kafkaTemplate.send(TOPIC, message.getUserName());
     }
 
+
+
 }
