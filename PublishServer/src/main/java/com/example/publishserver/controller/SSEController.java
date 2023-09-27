@@ -18,7 +18,13 @@ public class SSEController {
     }
 
     @PostMapping("/send-data/{userName}")
-    public void sendData(@PathVariable String userName) {
+    public void sendMessageEvent(@PathVariable String userName) {
         sseService.notify(userName, "event");
     }
+
+
+
+
+
+
 }

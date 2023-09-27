@@ -15,13 +15,13 @@ public class KafkaConsumer {
     @KafkaListener(topics = "sendMessage", groupId = "hotfka")
     public void consumeMessage(String messageUserName) throws IOException {
         System.out.println(String.format("Consumed message getUserName: %s", messageUserName));
-        sseController.sendData(messageUserName);
+        sseController.sendMessageEvent(messageUserName);
     }
 
     @KafkaListener(topics = "sendReaction", groupId = "hotfka")
     public void consumeReaction(String messageUserName) throws IOException {
         System.out.println(String.format("Consumed message getUserName: %s", messageUserName));
-        sseController.sendData(messageUserName);
+        sseController.sendReactionEvent(messageUserName);
     }
 
 }
