@@ -17,20 +17,15 @@ public class SSEController {
         return sseService.subscribe(userName);
     }
 
-    @PostMapping("/send-data/{userName}")
+    @PostMapping("/send-message/{userName}")
     public void sendMessageEvent(@PathVariable String userName) {
         sseService.notify(userName, "messageEvent");
     }
 
-    @PostMapping("/send-data/{userName}")
+    @PostMapping("/send-reaction/{userName}")
     public void sendReactionEvent(@PathVariable String userName) {
         sseService.notify(userName, "reactionEvent");
     }
-
-
-
-
-
 
 
 }

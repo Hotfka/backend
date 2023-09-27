@@ -20,7 +20,7 @@ public class KafkaConsumer {
 
     @KafkaListener(topics = "sendReaction", groupId = "hotfka")
     public void consumeReaction(String messageUserName) throws IOException {
-        System.out.println(String.format("Consumed message getUserName: %s", messageUserName));
+        System.out.println(String.format("Consumed reaction getUserName: %s", messageUserName));
         sseController.sendReactionEvent(messageUserName);
     }
 
