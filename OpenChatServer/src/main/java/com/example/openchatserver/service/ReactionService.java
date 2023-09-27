@@ -38,7 +38,7 @@ public class ReactionService {
         messageRepository.save(message);
 
 
-        kafkaProducer.sendMessageEvent(message);
+        kafkaProducer.sendReactionEvent(message);
 
 
         SendReactionResponse sendReactionResponse = new SendReactionResponse(request,reaction.getId());

@@ -8,11 +8,17 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class KafkaProducer {
-    private static final String TOPIC = "sendMessage";
+    private static final String TOPIC_MESSAGE = "sendMessage";
+    private static final String TOPIC_REACTION = "sendRaction";
     private final KafkaTemplate<String, String> kafkaTemplate;
     public void sendMessageEvent(Message message) {
         System.out.println(String.format("Produce message getUserName : %s", message.getUserName()));
-        this.kafkaTemplate.send(TOPIC, message.getUserName());
+        this.kafkaTemplate.send(TOPIC_MESSAGE, message.getUserName());
+    }
+
+    public void sendReactionEvent(Message message) {
+        System.out.println(String.format("Produce message getUserName : %s", message.getUserName()));
+        this.kafkaTemplate.send(TOPIC_REACTION, message.getUserName());
     }
 
 
