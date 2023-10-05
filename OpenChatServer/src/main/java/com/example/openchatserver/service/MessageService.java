@@ -59,7 +59,7 @@ public class MessageService {
         Long currentEventCount = Long.valueOf(redisTemplate.opsForValue().get("event_count"));
         System.out.println("redis count: "+currentEventCount + " hotchat : " + redisTemplate.opsForValue().get("hotchat"));
 
-        if (currentEventCount >= 700) {
+        if (currentEventCount >= 5000) {
             redisTemplate.opsForValue().set("hotchat", "true");
             System.out.println("hotchat created : "+currentEventCount);
         } else {
