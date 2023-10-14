@@ -35,8 +35,7 @@ LINE의 오픈챗서버 시스템아키텍처
 
 ![](https://blog.kakaocdn.net/dn/bHVfEG/btsxh7TgsZ3/KAZUvWAIBwsvavOpkPQj7K/img.png)
 
-> **이벤트 전달을 위해 SSE를 사용한 이유  
-> **
+> **이벤트 전달을 위해 SSE를 사용한 이유**
 
 ![](https://blog.kakaocdn.net/dn/OL2l1/btsxaMCsp7X/u1DKMrZSEYxg0RkPZhgpg1/img.png)
 
